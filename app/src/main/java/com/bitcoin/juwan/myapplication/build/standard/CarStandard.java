@@ -5,7 +5,7 @@ package com.bitcoin.juwan.myapplication.build.standard;
  * Create By：liumengqiang
  * Description：构造者模式（标准版）——产品类
  */
-public abstract class CarStandard {
+public class CarStandard {
     private String wheel; //轮子
     private String engine; //发动机
     private String lampBulb; //车灯
