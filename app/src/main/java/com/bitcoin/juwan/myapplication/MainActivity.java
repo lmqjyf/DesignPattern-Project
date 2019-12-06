@@ -1,11 +1,13 @@
 package com.bitcoin.juwan.myapplication;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.bitcoin.juwan.myapplication.build.BuilderActivity;
+import com.bitcoin.juwan.myapplication.prototype.PrototypeActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +29,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, BuilderActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //原型模式
+        findViewById(R.id.build_propotype).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PrototypeActivity.class);
                 startActivity(intent);
             }
         });
