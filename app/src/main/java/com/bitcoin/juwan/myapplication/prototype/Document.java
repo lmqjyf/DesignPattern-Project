@@ -16,6 +16,10 @@ public class Document implements Cloneable{
 
     private ArrayList<String> imageList = new ArrayList<>(); //图片
 
+    public Document() {
+        Log.e("Document:", "构造方法");
+    }
+
     public String getContent() {
         return content;
     }
