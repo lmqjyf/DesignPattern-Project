@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.bitcoin.juwan.myapplication.build.BuilderActivity;
+import com.bitcoin.juwan.myapplication.factory.FactoryActivity;
 import com.bitcoin.juwan.myapplication.prototype.PrototypeActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PrototypeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //工厂模式
+        findViewById(R.id.factory_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FactoryActivity.class);
                 startActivity(intent);
             }
         });
