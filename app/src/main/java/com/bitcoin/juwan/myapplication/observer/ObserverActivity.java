@@ -18,7 +18,7 @@ public class ObserverActivity extends AppCompatActivity {
         PeopleObserver wangwu = new PeopleObserver("王五");
 
         //创建被观察者
-        TaobaoPruductObservable observable = new TaobaoPruductObservable();
+        TaobaoProductObservable observable = new TaobaoProductObservable();
         observable.addObserver(zhangsan);
         observable.addObserver(lisi);
         observable.addObserver(wangwu);

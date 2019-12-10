@@ -8,7 +8,7 @@ import java.util.Observer;
 /**
  * FileName：PeopleObserver
  * Create By：liumengqiang
- * Description：TODO
+ * Description：观察者（关注断货商品的人）
  */
 public class PeopleObserver implements Observer {
     private String peopleName;
