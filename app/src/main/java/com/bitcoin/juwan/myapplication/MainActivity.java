@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.bitcoin.juwan.myapplication.build.BuilderActivity;
 import com.bitcoin.juwan.myapplication.factory.FactoryActivity;
+import com.bitcoin.juwan.myapplication.observer.ObserverActivity;
 import com.bitcoin.juwan.myapplication.prototype.PrototypeActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -48,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, FactoryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //观察者模式
+        findViewById(R.id.observer_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ObserverActivity.class);
                 startActivity(intent);
             }
         });
