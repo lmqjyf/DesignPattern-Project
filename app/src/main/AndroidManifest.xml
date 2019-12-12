@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".observer.ObserverActivity"></activity>
+        <activity android:name=".observer.ObserverActivity" />
         <activity android:name=".factory.FactoryActivity" />
         <activity android:name=".prototype.PrototypeActivity" />
         <activity android:name=".build.BuilderActivity" />
@@ -21,6 +21,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--静态广播注册 enabled：能接收广播；exported：能接收其他APK发送的广播-->
+        <receiver
+            android:name=".observer.reveicer.StaticReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.bitcoin.juwan.myapplication.observer.reveicer" />
+            </intent-filter>
+
+        </receiver>
     </application>
 
 </manifest>

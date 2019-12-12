@@ -1,7 +1,7 @@
 package com.bitcoin.juwan.myapplication;
 
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +9,7 @@ import android.view.View;
 import com.bitcoin.juwan.myapplication.build.BuilderActivity;
 import com.bitcoin.juwan.myapplication.factory.FactoryActivity;
 import com.bitcoin.juwan.myapplication.observer.ObserverActivity;
+import com.bitcoin.juwan.myapplication.observer.reveicer.DynamicReceiver;
 import com.bitcoin.juwan.myapplication.prototype.PrototypeActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -61,5 +62,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //注册广播
+        IntentFilter intentFilter = new IntentFilter("com.bitcoin.juwan.myapplication.observer.reveicer");
+        receiver = new DynamicReceiver();
+        registerReceiver(receiver, intentFilter);
+    }
+
+    private DynamicReceiver receiver;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(receiver == null) return;
+        //反注册广播
+        unregisterReceiver(receiver);
     }
 }

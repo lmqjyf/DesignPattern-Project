@@ -1,7 +1,9 @@
 package com.bitcoin.juwan.myapplication.observer;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.bitcoin.juwan.myapplication.R;
 
@@ -25,5 +27,26 @@ public class ObserverActivity extends AppCompatActivity {
 
         //通知观察者，货物到货了
         observable.noticeAllObserver("阿米洛键盘");
+
+        //**************广播学习**************//
+        findViewById(R.id.button_1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent  =  new Intent("com.bitcoin.juwan.myapplication.observer.reveicer");
+                intent.putExtra("string", "我是动态广播");
+                intent.setPackage(getPackageName());
+                sendBroadcast(intent);
+            }
+        });
+
+        findViewById(R.id.button_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent("com.bitcoin.juwan.myapplication.observer.reveicer");
+                intent.putExtra("string","我是静态广播");
+                intent.setPackage(getPackageName());
+                sendBroadcast(intent);
+            }
+        });
     }
 }
