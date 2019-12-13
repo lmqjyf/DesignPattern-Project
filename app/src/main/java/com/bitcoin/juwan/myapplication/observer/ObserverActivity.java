@@ -45,7 +45,7 @@ public class ObserverActivity extends AppCompatActivity {
                 Intent intent = new Intent("com.bitcoin.juwan.myapplication.observer.reveicer");
                 intent.putExtra("string","我是静态广播");
                 intent.setPackage(getPackageName());
-                sendBroadcast(intent);
+                sendBroadcast(intent, "StaticReceiver");
             }
         });
     }

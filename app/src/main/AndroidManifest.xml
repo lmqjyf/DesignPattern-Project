@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bitcoin.juwan.myapplication">
 
+    <!--广播添加私有权限-->
+    <permission android:name="StaticReceiver"/>
+
+    <uses-permission android:name="StaticReceiver"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,10 +31,11 @@
         <receiver
             android:name=".observer.reveicer.StaticReceiver"
             android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.bitcoin.juwan.myapplication.observer.reveicer" />
-            </intent-filter>
+            android:exported="true"
+            android:permission="StaticReceiver">
+            <!--<intent-filter>-->
+                <!--<action android:name="com.bitcoin.juwan.myapplication.observer.reveicer" />-->
+            <!--</intent-filter>-->
 
         </receiver>
     </application>
