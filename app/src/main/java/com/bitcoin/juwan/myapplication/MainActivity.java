@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.bitcoin.juwan.myapplication.build.BuilderActivity;
 import com.bitcoin.juwan.myapplication.factory.FactoryActivity;
+import com.bitcoin.juwan.myapplication.memorandum.MemorandumActivity;
 import com.bitcoin.juwan.myapplication.observer.ObserverActivity;
 import com.bitcoin.juwan.myapplication.observer.reveicer.DynamicReceiver;
 import com.bitcoin.juwan.myapplication.prototype.PrototypeActivity;
@@ -67,6 +68,15 @@ public class MainActivity extends AppCompatActivity {
         IntentFilter intentFilter = new IntentFilter("com.bitcoin.juwan.myapplication.observer.reveicer");
         receiver = new DynamicReceiver();
         registerReceiver(receiver, intentFilter);
+
+        //备忘录模式
+        findViewById(R.id.memorandum_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MemorandumActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private DynamicReceiver receiver;
