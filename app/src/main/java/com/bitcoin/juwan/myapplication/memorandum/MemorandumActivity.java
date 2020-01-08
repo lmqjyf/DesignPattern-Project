@@ -73,7 +73,7 @@ public class MemorandumActivity extends AppCompatActivity {
         findViewById(R.id.button_3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editText.resumeData(caretaker.getPreMemento());
+                editText.resumeData(caretaker.getBackMemento());
             }
         });
     }
